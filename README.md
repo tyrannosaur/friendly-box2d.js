@@ -1,5 +1,5 @@
 # friendly-box2d.js
-A friendlier version of box2d for JavaScript. FB2D wraps up the complexity of [http://code.google.com/p/box2dweb](box2dweb)
+A friendlier version of box2d for JavaScript. FB2D wraps up the complexity of [box2dweb](http://code.google.com/p/box2dweb)
 for easier use.
 
 ## Example     
@@ -25,18 +25,18 @@ world.addBody({
 
 setInterval(function() {
     world.step(1/fps, stepSize, stepSize);
-    world.iterBodies(function(i, body) {            
+    world.iterBodies(function(i, body) {
       if (body.id != undefined) {
           var pos = body.GetPosition(),
               angle = body.GetAngle(),
               obj = $(body.id);
                           
           obj.css('left', pos.x * world.drawRatio() - obj.width()/2 + 'px');
-          obj.css('top', pos.y * world.drawRatio() - obj.height()/2 + 'px');                                           
+          obj.css('top', pos.y * world.drawRatio() - obj.height()/2 + 'px');
           // CSS rotation here
       }
-    });    
-    world.clearForces();                            
+    });
+    world.clearForces();
 });   
 ```
 
